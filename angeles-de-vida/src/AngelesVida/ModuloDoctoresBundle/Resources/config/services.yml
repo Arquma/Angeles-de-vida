@@ -1,0 +1,7 @@
+parameters:
+#    modulo_doctores.example.class: AngelesVida\ModuloDoctoresBundle\Example
+
+services:
+#    modulo_doctores.example:
+#        class: %modulo_doctores.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,45 @@
+modulo_doctores_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: ModuloDoctoresBundle:Default:index }
+    
+dInicio:
+    path:     /dInicio
+    defaults: { _controller: ModuloDoctoresBundle:Default:index }
+     
+dProtocolos:
+    path:     /dProtocolos
+    defaults: { _controller: ModuloDoctoresBundle:Default:dProtocolos }
+    
+dArticulos:
+    path:     /dArticulos
+    defaults: { _controller: ModuloDoctoresBundle:Default:dArticulos }
+    
+dHorarios:
+    path:     /dHorarios
+    defaults: { _controller: ModuloDoctoresBundle:Default:dHorarios }
+    
+        
+dDescargarHorario:
+    path:     /dDescargarHorario
+    defaults: { _controller: ModuloDoctoresBundle:Default:dDescargarHorario }
+    
+dNuevoArticuloDoc:
+    path:     /dNuevoArticuloDoc
+    defaults: { _controller: ModuloDoctoresBundle:Default:dNuevoArticuloDoc }
+    
+    
+dEliminarArticulo:
+    path:     /dEliminarArticulo
+    defaults: { _controller: ModuloDoctoresBundle:Default:dEliminarArticulo }
+    
+dDescargarArticulo:
+    path:     /dDescargarArticulo
+    defaults: { _controller: ModuloDoctoresBundle:Default:dDescargarArticulo }
+    
+dNuevoArticuloLink:
+    path:     /dNuevoArticuloLink
+    defaults: { _controller: ModuloDoctoresBundle:Default:dNuevoArticuloLink }
+    
+dVerArticulo:
+    path:     /dVerArticulo
+    defaults: { _controller: ModuloDoctoresBundle:Default:dVerArticulo }

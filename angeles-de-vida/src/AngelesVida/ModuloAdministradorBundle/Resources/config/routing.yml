@@ -1,0 +1,51 @@
+modulo_administrador_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: ModuloAdministradorBundle:Default:index }
+    
+aInicio:
+    pattern: /aInicio
+    defaults: { _controller: ModuloAdministradorBundle:Default:aInicio }
+    
+aDocumentos:
+    pattern: /aDocumentos
+    defaults: { _controller: ModuloAdministradorBundle:Default:aDocumentos }
+    
+aActividades:
+    pattern: /aActividades
+    defaults: { _controller: ModuloAdministradorBundle:Default:aActividades }
+    
+aCuentas:
+    pattern: /aCuentas
+    defaults: { _controller: ModuloAdministradorBundle:Default:aCuentas }
+    
+aEditarInicio:
+    pattern: /aEditarInicio
+    defaults: { _controller: ModuloAdministradorBundle:Default:aEditarInicio }
+    
+aSubirHorario:
+    pattern: /aSubirHorario
+    defaults: { _controller: ModuloAdministradorBundle:Default:aSubirHorario }
+    
+aSubirImagen:
+    pattern: /aSubirImagen
+    defaults: {_controller: ModuloAdministradorBundle:Default:aSubirImagen }
+    
+aMantHorario:
+    pattern: /aMantHorario
+    defaults: { _controller: ModuloAdministradorBundle:Default:aMantHorario }
+    
+aBorrarHorario:
+    pattern: /aBorrarHorario
+    defaults: { _controller: ModuloAdministradorBundle:Default:aBorrarHorario }
+    
+aDescargarHorario:
+    pattern: /aDescargarHorario
+    defaults: { _controller: ModuloAdministradorBundle:Default:aDescargarHorario }
+    
+aMantGaleria:
+    pattern: /aMantGaleria
+    defaults: { _controller: ModuloAdministradorBundle:Default:aMantenimientoGaleria }
+
+aEliminarImagen:
+    pattern: /aEliminarImagen
+    defaults: { _controller: ModuloAdministradorBundle:Default:aEliminarImagen }    

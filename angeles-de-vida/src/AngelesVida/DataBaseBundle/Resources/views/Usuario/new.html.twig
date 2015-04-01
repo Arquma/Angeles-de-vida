@@ -1,0 +1,65 @@
+{% extends "baseCrud.html.twig" %}
+{% block titleCrud %}
+    <li class="nav-header">Usuarios</li>
+    {% endblock %}
+    {% block bodyCrud %}
+
+    <script>
+        $(function () {
+            $("#form").validate({
+                rules: {
+                    'nombreUsuario': 'required',
+                    'contrasena': 'required'
+                },
+                messages: {
+                    'nombreUsuario': 'Este campo es requerido.',
+                    'contrasena': 'Este campo es requerido.'
+                },
+                debug: true,
+                submitHandler: function (form) {
+                    alert('Datos de usuario ingresados correctamente.');
+                }
+            });
+        });
+
+    </script>
+
+    <center>
+        <h2>Crear Usuario</h2>
+
+
+        <div class="row">
+            <div class="box col-md-12">
+                <div class="box-inner">
+                    <div class="box-content">
+                        {% if message is defined%}
+                            <div class="alert alert-info"><font color="088A08">{{message}}</font></div>
+                            {% endif %}
+
+                        {{form_start(form)}}
+                        {{form_errors(form)}}
+
+
+                        {{ form_label(form.nombreUsuario) }}
+                        {{ form_errors(form.nombreUsuario) }}
+                        {{ form_widget(form.nombreUsuario) }}
+                        <br>
+                        <br>
+                        {{ form_label(form.contrasena) }}
+                        {{ form_errors(form.contrasena) }}
+                        {{ form_widget(form.contrasena) }}
+                        <br>
+                        <br>
+                        {{ form_rest(form) }}
+
+                        {{form_end(form)}}
+
+                        <br>
+                        <a class="btn btn-primary" href="{{ path('usuario') }}">
+                            Volver a usuarios
+                        </a>
+                        </center>
+                    {% endblock %}
+
+
+

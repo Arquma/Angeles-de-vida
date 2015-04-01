@@ -1,0 +1,7 @@
+parameters:
+#    angeles_vida.example.class: AngelesVida\AngelesVidaBundle\Example
+
+services:
+#    angeles_vida.example:
+#        class: %angeles_vida.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

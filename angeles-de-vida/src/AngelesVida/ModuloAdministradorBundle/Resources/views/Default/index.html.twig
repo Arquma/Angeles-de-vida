@@ -1,0 +1,58 @@
+
+
+{% include 'ModuloAdministradorBundle:Default:baseAdminHeaderAlto.html.twig' %}
+
+
+<!-- top-nav -->
+		<nav class="top-nav">
+			<div class="shell">
+				<!--<a href="#" class="nav-btn">Inicio<span></span></a>
+				<span class="top-nav-shadow"></span>-->
+				<ul class="clearfix">
+					<li class="active"><a href="{{ url('aInicio') }}">Inicio</a></li>
+					<li><a href="{{ url('aActividades') }}">Actividades</a></li>
+					<li><a href="{{ url('aDocumentos') }}">Documentos</a></li>
+                                        <li><a href="{{ url('aCuentas') }}">Cuentas</a></li>
+                                        <li><a href="{{ url('aEditarInicio') }}">Editar Inicio</a></li>
+					<li><a href="{{ url('cerrar_sesion') }}">Salir</a></li>
+				</ul>
+			</div>
+		</nav>
+		<!-- end of top-nav -->
+<div class="ch-container">
+    <div class="row">
+
+        <div class="row">
+            <div class="col-md-12 center login-header">
+
+
+                <center> <h2 id="logo2"></h2></center>	
+
+
+
+                <h2><font color="#000000">Asociación Pro Neonatos Dr.R.A Calderón Guardia<font/></h2>
+                <h5><font color="#6E6E6E">Somos un grupo de personas con sensibilidad social, reunidas para gestionar recursos,
+                  <font/>
+                </h5>
+                <h5><font color="#6E6E6E">paralelamente a aquellos que aporta la Caja Costarricense de Seguro Social,
+                  <font/>
+                </h5>
+                <h5>  <font color="#6E6E6E">con el fin de cumplir la misión del Servicio de Neonatología del Hospital Dr. Rafael Ángel Calderón Guardia.<font/></h5>
+            </div>
+            <!--/span-->
+
+        </div><!--/fluid-row-->
+
+    </div><!--/.fluid-container-->
+
+    <br>
+    
+    
+    
+    
+    
+    <br/>
+</div><!--/.fluid-container-->
+
+{% include 'ModuloAdministradorBundle:Default:baseAdminFooter.html.twig' %} 
+

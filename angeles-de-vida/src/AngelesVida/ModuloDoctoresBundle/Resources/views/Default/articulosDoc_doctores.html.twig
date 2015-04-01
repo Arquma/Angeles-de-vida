@@ -1,0 +1,165 @@
+{% include 'ModuloDoctoresBundle:Default:baseDoctoresHeaderAlto.html.twig' %}
+
+<!-- top-nav -->
+
+<!-- top-nav -->
+{% block top_nav %}
+    <nav class="top-nav" ">
+        <div class="shell" >
+            <!--<a href="#" class="nav-btn">Inicio<span></span></a>
+            <span class="top-nav-shadow"></span>-->
+            <ul class="clearfix">
+
+                <li><a href="{{ url('dInicio') }}">Inicio</a></li>
+                <li class="active"><a href="{{ url('dArticulos') }}">Articulos</a></li>
+                <li><a href="{{ url('dProtocolos') }}">Protocolos</a></li>
+                <li><a href="{{ url('dHorarios') }}">Horarios y Roles</a></li>
+                <li><a href="{{ url('cerrar_sesion') }}">Salir</a></li>
+
+            </ul>
+        </div>
+    </nav>
+{% endblock %}  
+
+<div class="navbar navbar-default" role="navigation">
+
+    <div class="navbar-inner">
+        <button type="button" class="navbar-toggle pull-left animated flip">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+    </div>
+</div>
+<div class="col-sm-2 col-lg-2">
+    <div class="sidebar-nav">
+        <div class="nav-canvas">
+            <div class="nav-sm nav nav-stacked">
+
+            </div>
+            <ul class="nav nav-pills nav-stacked main-menu">
+                <li class="nav-header">Acciones</li>
+                <li><a class="ajax-link" href="{{path('dNuevoArticuloDoc')}}"><i class="glyphicon glyphicon-plus"></i><span> Nuevo documento</span></a>
+                </li>
+                <li><a class="ajax-link" href="{{path('dNuevoArticuloLink')}}"><i class="glyphicon glyphicon-plus"></i><span> Nuevo link</span></a>
+                </li>
+                <li><a class="ajax-link" href="form.html"><i
+                            class="glyphicon glyphicon-list-alt"></i><span> Artículos</span></a></li>
+
+                <li class="nav-header hidden-md">Referencias</li>
+                <li><a class="ajax-link" href="table.html"><i
+                            class="glyphicon glyphicon-align-justify"></i><span>Ejemplo</span></a></li>
+                <li><a class="ajax-link" href="table.html"><i
+                            class="glyphicon glyphicon-align-justify"></i><span>Ejemplo</span></a></li>
+                <li><a class="ajax-link" href="table.html"><i
+                            class="glyphicon glyphicon-align-justify"></i><span>Ejemplo</span></a></li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+<!-- end of top-nav -->
+<!-- end of top-nav -->
+
+
+<div class="row">
+
+
+    {% for articulo in articulosLink %}
+        <div class="box col-md-4">
+            <div class="box-inner">
+                <div class="box-header well" data-original-title="">
+
+
+                   
+                </div>
+                <div class="box-content">
+                    <div class="row">
+                        <div class="col-md-4"><h6>{{articulo.nombre}}</h6></div>
+                        <div class="col-md-4"><h6>{{articulo.descripcion}}</h6></div>
+                        <div class="col-md-4"><h6> <a class="btn btn-success btn-xs" href="{{articulo.link}}">
+                                    <i class="glyphicon glyphicon-download-alt"></i>
+                                    Ver
+                                </a></h6>
+                            <h6>
+                                <a class="btn btn-danger btn-xs" href="{{path('dEliminarArticulo')}}?id={{articulo.codArticulo}}">
+                                    <i class="glyphicon glyphicon-trash"></i>
+                                    Eliminar</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/span-->
+
+    {% endfor %}
+    {% for articulo in articulosDoc %}
+        <div class="box col-md-4">
+            <div class="box-inner">
+                <div class="box-header well" data-original-title="">
+
+
+                 
+                </div>
+                <div class="box-content">
+                    <div class="row">
+                        <div class="col-md-4"><h6>{{articulo.nombre}}</h6></div>
+                        <div class="col-md-4"><h6>{{articulo.descripcion}}</h6></div>
+                        <div class="col-md-4"><h6> <a class="btn btn-success btn-xs" href="{{path('dVerArticulo')}}?id={{articulo.codArticulo}}" target="_blank">
+                                    <i class="glyphicon glyphicon-download-alt"></i>
+                                    Ver
+                                </a></h6>
+                            
+                            <h6>
+                                <a class="btn btn-danger btn-xs" href="{{path('dEliminarArticulo')}}?id={{articulo.codArticulo}}">
+                                    <i class="glyphicon glyphicon-trash"></i>
+                                    Eliminar</a></h6>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/span-->
+
+    {% endfor %}
+</div><!--/row-->
+
+
+<script src="{{asset('bundles/angelesvida/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+
+<!-- library for cookie management -->
+<script src="{{asset('bundles/angelesvida/js/jquery.cookie.js')}}"></script>
+<!-- calender plugin -->
+<script src='{{asset('bundles/angelesvida/bower_components/moment/min/moment.min.js')}}'></script>
+<script src='{{asset('bundles/angelesvida/bower_components/fullcalendar/dist/fullcalendar.min.js')}}'></script>
+<!-- data table plugin -->
+<script src='{{asset('bundles/angelesvida/js/jquery.dataTables.min.js')}}'></script>
+
+<!-- select or dropdown enhancer -->
+<script src="{{asset('bundles/angelesvida/bower_components/chosen/chosen.jquery.min.js')}}"></script>
+<!-- plugin for gallery image view -->
+<script src="{{asset('bundles/angelesvida/bower_components/colorbox/jquery.colorbox-min.js')}}"></script>
+<!-- notification plugin -->
+<script src="{{asset('bundles/angelesvida/js/jquery.noty.js')}}"></script>
+<!-- library for making tables responsive -->
+<script src="{{asset('bundles/angelesvida/bower_components/responsive-tables/responsive-tables.js')}}"></script>
+<!-- tour plugin -->
+<script src="{{asset('bundles/angelesvida/bower_components/bootstrap-tour/build/js/bootstrap-tour.min.js')}}"></script>
+<!-- star rating plugin -->
+<script src="{{asset('bundles/angelesvida/js/jquery.raty.min.js')}}"></script>
+<!-- for iOS style toggle switch -->
+<script src="{{asset('bundles/angelesvida/js/jquery.iphone.toggle.js')}}"></script>
+<!-- autogrowing textarea plugin -->
+<script src="{{asset('bundles/angelesvida/js/jquery.autogrow-textarea.js')}}"></script>
+<!-- multiple file upload plugin -->
+<script src="{{asset('bundles/angelesvida/js/jquery.uploadify-3.1.min.js')}}"></script>
+<!-- history.js for cross-browser state change on ajax -->
+<script src="{{asset('bundles/angelesvida/js/jquery.history.js')}}"></script>
+<!-- application script for Charisma demo -->
+<script src="{{asset('bundles/angelesvida/js/charisma.js')}}"></script>
+{% include 'ModuloDoctoresBundle:Default:baseDoctoresFooter.html.twig' %} 
+
+

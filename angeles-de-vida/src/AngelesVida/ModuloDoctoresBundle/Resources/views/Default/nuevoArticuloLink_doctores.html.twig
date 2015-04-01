@@ -1,0 +1,75 @@
+{# empty Twig template #}
+{% include 'ModuloDoctoresBundle:Default:baseDoctoresHeaderAlto.html.twig' %}
+<link id="bs-css" href="{{asset('bundles/angelesvida/other/css/bootstrap-cerulean.min.css')}}" rel="stylesheet">
+<link href="{{asset('bundles/angelesvida/other/css/charisma-app.css')}}" rel="stylesheet">
+<!-- top-nav -->
+
+<!-- top-nav -->
+{% block top_nav %}
+    <nav class="top-nav" ">
+        <div class="shell" >
+            <!--<a href="#" class="nav-btn">Inicio<span></span></a>
+            <span class="top-nav-shadow"></span>-->
+            <ul class="clearfix">
+                <li><a href="{{ url('dInicio') }}">Inicio</a></li>
+                <li class="active"><a href="{{ url('dArticulos') }}">Articulos</a></li>
+                <li><a href="{{ url('dProtocolos') }}">Protocolos</a></li>
+                <li><a href="{{ url('dHorarios') }}">Horarios y Roles</a></li>
+                <li><a href="{{ url('login') }}">Salir</a></li>
+
+            </ul>
+        </div>
+    </nav>
+{% endblock %}       
+<!-- end of top-nav -->
+
+
+<center>
+    <br>
+
+
+    <br/>
+    {% if message is defined%}
+        <p class="help-block"><font color="088A08"><h4>{{message}}</h4></font></p>
+        {% endif %}
+        {% if error is defined %}
+    <p class="help-block"><font color="#FF0000"><h4>{{error}}</h4></font></p>
+    {% endif %}
+<div class="box-content">
+    <form role="form" method="POST" enctype="multipart/form-data" action="{{path('dNuevoArticuloLink')}}">
+
+
+        <h2>¡Subir artículo!</h2>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Descripción</label>
+            <input type="text" class="form-control" id="inputSuccess1" name="descripcion">
+            <label for="exampleInputEmail1">Nombre</label>
+            <input type="text" class="form-control" id="inputSuccess1" name="nombre">
+            <label for="exampleInputEmail1">Dirección</label>
+            <input type="text" class="form-control" id="inputSuccess1" name="direccion">
+
+
+        </div>
+        <div class="box-content">
+            <div class="control-group">
+                <label class="control-label" for="selectError">Compartir con:</label>
+
+                <div class="controls">
+                    <select id="selectError" data-rel="chosen" name="selectUsuario">
+                        <option value="Medicos Residentes e Internos">Médicos Residentes e Internos</option>
+                        <option value="Padres de familia">Padres de familia</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-info btn-sm">Guardar</button>
+    </form>
+    <br>
+
+
+    <br/>
+    <a href="{{path('dArticulos')}}"
+       ><h4>Volver a la lista de Artículos</h4></a>
+</div>
+</center>
+{% include 'ModuloDoctoresBundle:Default:baseDoctoresFooter.html.twig' %} 

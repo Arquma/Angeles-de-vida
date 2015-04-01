@@ -1,0 +1,34 @@
+modulo_internos:
+    resource: "@ModuloInternosBundle/Resources/config/routing.yml"
+    prefix:   /
+
+modulo_asociacion:
+    resource: "@ModuloAsociacionBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+db:
+    resource: "@DBBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+
+
+modulo_doctores:
+    resource: "@ModuloDoctoresBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+
+modulo_residentes:
+    resource: "@ModuloResidentesBundle/Resources/config/routing.yml"
+    prefix:   /
+
+modulo_administrador:
+    resource: "@ModuloAdministradorBundle/Resources/config/routing.yml"
+    prefix:   /
+
+angeles_vida:
+    resource: "@AngelesVidaBundle/Resources/config/routing.yml"
+    prefix:   /
+

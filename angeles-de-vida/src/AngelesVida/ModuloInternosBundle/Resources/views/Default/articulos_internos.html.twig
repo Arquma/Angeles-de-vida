@@ -1,0 +1,74 @@
+{% include 'ModuloInternosBundle:Default:baseInternosHeaderAlto.html.twig' %}
+<link id="bs-css" href="{{asset('bundles/angelesvida/other/css/bootstrap-cerulean.min.css')}}" rel="stylesheet">
+<link href="{{asset('bundles/angelesvida/other/css/charisma-app.css')}}" rel="stylesheet">
+
+
+<!-- top-nav -->
+<nav class="top-nav">
+    <div class="shell">
+        <ul class="clearfix">
+            <li><a href="{{ url('iInicio') }}">Inicio</a></li>
+            <li class="active"><a href="{{ url('iArticulos') }}">Articulos</a></li>
+            <li><a href="{{ url('iHorarios') }}">Horarios y Roles</a></li>
+            <li><a href="{{ url('login') }}">Salir</a></li>
+        </ul>
+    </div>
+</nav>
+<!-- end of top-nav -->
+<br>
+
+<br/>
+<center><h3><li class="glyphicon glyphicon-ok-circle"></li><font color="#1C1C1C"> Lista de Artículos<font/></h3></center>
+
+{% if message is defined%}
+    <div class="box-content alerts">
+        <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>¡{{message}}!</strong>
+        </div>
+    </div>
+{% endif %}
+<div class="row">
+    {% for articulo in articulosLink %}
+        <div class="box col-md-4">
+            <div class="box-inner">
+                <div class="box-header well" data-original-title="">
+                </div>
+                <div class="box-content">
+                    <div class="row">
+                        <div class="col-md-4"><h6>{{articulo.nombre}}</h6></div>
+                        <div class="col-md-4"><h6>{{articulo.descripcion}}</h6></div>
+                        <div class="col-md-4"><h6> <a class="btn btn-warning btn-xs" href="{{articulo.link}}">
+                                    <i class="glyphicon glyphicon-download-alt"></i>
+                                    Ver
+                                </a></h6></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/span-->
+
+    {% endfor %}
+    {% for articulo in articulosDoc %}
+        <div class="box col-md-4">
+            <div class="box-inner">
+                <div class="box-header well" data-original-title="">
+                </div>
+                <div class="box-content">
+                    <div class="row">
+                        <div class="col-md-4"><h6>{{articulo.nombre}}</h6></div>
+                        <div class="col-md-4"><h6>{{articulo.descripcion}}</h6></div>
+                        <div class="col-md-4"><h6> <a class="btn btn-success btn-xs" href="{{path('rDescargarArticulo')}}?id={{articulo.codArticulo}}">
+                                    <i class="glyphicon glyphicon-zoom-in icon-white"></i>
+                                    Ver
+                                </a></h6></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/span-->
+
+    {% endfor %}
+</div><!--/row-->
+
+{% include 'ModuloInternosBundle:Default:baseInternosFooter.html.twig' %} 

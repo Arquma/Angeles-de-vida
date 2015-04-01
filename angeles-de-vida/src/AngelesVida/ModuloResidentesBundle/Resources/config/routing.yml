@@ -1,0 +1,24 @@
+modulo_residentes_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: ModuloResidentesBundle:Default:index }
+    
+rInicio:
+    pattern: /rInicio
+    defaults: { _controller: ModuloResidentesBundle:Default:rInicio }
+    
+    
+rArticulos:
+    pattern: /rArticulos
+    defaults: { _controller: ModuloResidentesBundle:Default:rArticulos }
+    
+rHorarios:
+    pattern: /rHorarios
+    defaults: { _controller: ModuloResidentesBundle:Default:rHorarios }
+    
+rDescargarArticulo:
+    pattern: /rDescargarArticulo
+    defaults: { _controller: ModuloResidentesBundle:Default:rDescargarArticulo }
+    
+rDescargarHorario:
+    pattern: /rDescargarHorario
+    defaults: { _controller: ModuloResidentesBundle:Default:rDescargarHorario }

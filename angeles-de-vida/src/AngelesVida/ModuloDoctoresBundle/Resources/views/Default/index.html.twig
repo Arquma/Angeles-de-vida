@@ -1,0 +1,64 @@
+{% include 'ModuloDoctoresBundle:Default:baseDoctoresHeaderAlto.html.twig' %}
+
+
+
+<!-- top-nav -->
+{% block top_nav %}
+    <nav class="top-nav">
+        <div class="shell" >
+            <!--<a href="#" class="nav-btn">Inicio<span></span></a>
+            <span class="top-nav-shadow"></span>-->
+            <ul class="clearfix">
+              
+                <li class="active"><a href="{{ url('dInicio') }}">Inicio</a></li>
+                <li><a href="{{ url('dArticulos') }}">Articulos</a></li>
+                <li><a href="{{ url('dProtocolos') }}">Protocolos</a></li>
+                <li><a href="{{ url('dHorarios') }}">Horarios y Roles</a></li>
+                <li><a href="{{ url('login') }}">Salir</a></li>
+
+            </ul>
+        </div>
+    </nav>
+{% endblock %}
+
+
+
+<div class="ch-container">
+    <div class="row">
+
+        <div class="row">
+            <div class="col-md-12 center login-header">
+
+
+                <center> <h2 id="logo2"></h2></center>	
+
+
+
+                <h2><font color="#000000">Asociación Pro Neonatos Dr.R.A Calderón Guardia<font/></h2>
+                <h5><font color="#6E6E6E">Somos un grupo de personas con sensibilidad social, reunidas para gestionar recursos,
+                  <font/>
+                </h5>
+                <h5><font color="#6E6E6E">paralelamente a aquellos que aporta la Caja Costarricense de Seguro Social,
+                  <font/>
+                </h5>
+                <h5>  <font color="#6E6E6E">con el fin de cumplir la misión del Servicio de Neonatología del Hospital Dr. Rafael Ángel Calderón Guardia.<font/></h5>
+            </div>
+            <!--/span-->
+
+        </div><!--/fluid-row-->
+
+    </div><!--/.fluid-container-->
+
+    <br>
+    
+    
+    
+    
+    
+    <br/>
+</div><!--/.fluid-container-->
+
+
+{% include 'ModuloDoctoresBundle:Default:baseDoctoresFooter.html.twig' %} 
+
+

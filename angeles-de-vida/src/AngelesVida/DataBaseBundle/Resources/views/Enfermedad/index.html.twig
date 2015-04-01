@@ -1,0 +1,51 @@
+{% extends "baseCrud.html.twig" %}
+{% block titleCrud %}
+    <li class="nav-header">Enfermedades</li>
+    {% endblock %}
+    {% block bodyCrud %}
+    <center>
+
+        <h2>Enfermedades</h2>
+
+        <div class="row">
+            <div class="box col-md-12">
+                <div class="box-inner">
+                    <div class="box-content">
+                        {% if message is defined%}
+                            <div class="alert alert-info"><font color="088A08">{{message}}</font></div>
+                            {% endif %}
+
+                        <table class="rwd-table">
+                            <tbody>
+                                <tr class="bg-primary">
+                                    <th class="center-text">Id</th>
+                                    <th class="center-text">Nombre</th>
+                                    <th class="center-text">Descripción</th>
+                                    <th class="center-text">Acciones</th>
+                                </tr>
+                                </thead>
+
+                                {% for entity in entities %}
+                                    <tr class="center-text">
+                                        <td data-th="Id">{{ entity.id }}</td>
+                                        <td data-th="Nombre">{{ entity.nombre }}</td>
+                                        <td data-th="Descripción">{{ entity.descripcion }}</td>
+
+                                        <td data-th="Acciones">
+                                            <ul>
+
+
+                                                <a class="btn btn-warning" href="{{ path('enfermedad_edit', { 'id': entity.id }) }}">Editar/Eliminar</a>
+
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+
+                        <a class="btn btn-primary" href="{{ path('enfermedad_new') }}">
+                            Crear una nueva enfermedad
+                        </a>
+                        </center>
+                    {% endblock %}

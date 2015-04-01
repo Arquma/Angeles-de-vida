@@ -1,0 +1,7 @@
+parameters:
+#    modulo_administrador.example.class: AngelesVida\ModuloAdministradorBundle\Example
+
+services:
+#    modulo_administrador.example:
+#        class: %modulo_administrador.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

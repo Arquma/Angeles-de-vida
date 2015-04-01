@@ -1,0 +1,43 @@
+modulo_asociacion_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: ModuloAsociacionBundle:Default:index }
+
+AsInicio:
+    path:     /AsInicio
+    defaults: { _controller: ModuloAsociacionBundle:Default:index }
+    
+AsSubirArchivo:
+    path:     /AsSubirArchivo
+    defaults: { _controller: ModuloAsociacionBundle:Default:AsSubirArchivo }
+    
+AsEstadosDeCuenta:
+    path:     /AsEstadosDeCuenta
+    defaults: { _controller: ModuloAsociacionBundle:Default:AsEstadosDeCuenta }
+    
+AsComunicados:
+    path:     /AsComunicados
+    defaults: { _controller: ModuloAsociacionBundle:Default:AsComunicados }
+    
+AsDescargarEc:
+    path:     /AsDescargarEc
+    defaults: { _controller: ModuloAsociacionBundle:Default:AsDescargarEc }
+    
+AsEliminarEc:
+    path:     /AsEliminarEc
+    defaults: { _controller: ModuloAsociacionBundle:Default:AsEliminarEc }
+    
+AsVerEc:
+    path:     /AsVerEc
+    defaults: { _controller: ModuloAsociacionBundle:Default:AsVerEc }
+    
+AsDescargarCom:
+    path:     /AsDescargarCom
+    defaults: { _controller: ModuloAsociacionBundle:Default:AsDescargarCom }
+    
+AsEliminarCom:
+    path:     /AsEliminarCom
+    defaults: { _controller: ModuloAsociacionBundle:Default:AsEliminarCom }
+    
+AsVerCom:
+    path:     /AsVerCom
+    defaults: { _controller: ModuloAsociacionBundle:Default:AsVerCom }

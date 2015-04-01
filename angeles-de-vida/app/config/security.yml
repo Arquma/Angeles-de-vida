@@ -1,0 +1,36 @@
+security:
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext
+        AngelesVida\DataBaseBundle\Entity\Usuario: bcrypt
+
+    role_hierarchy:
+        ROLE_ADMIN:       [ROLE_USER]
+
+    providers:
+        chain_providers:
+            chain:
+                providers: [in_memory,user_db]
+        in_memory:
+            memory:
+                users:
+                    admin: { password: adminpass, roles: ROLE_admin }
+        user_db:
+            entity: { class: DBBundle:Usuario, property: nombreUsuario }            
+
+    firewalls:
+        main:
+            pattern:
+            form_login:
+                login_path: /login
+                check_path: /login_check
+            logout:
+                path: /logout
+            security: true
+            anonymous: true
+    access_control:
+       - { path: /admin/rol, roles: ROLE_admin }
+       - { path: /admin/usuario, roles: ROLE_admin }
+       - { path: /admin/enfermedad, roles: ROLE_admin }
+       - { path: /admin/tratamiento, roles: ROLE_admin }
+       - { path: /admin/protocolo, roles: ROLE_admin }
+       - { path: /admin/actividad, roles: ROLE_admin }

@@ -1,0 +1,73 @@
+{# empty Twig template #}
+{% include 'ModuloInternosBundle:Default:baseInternosHeaderAlto.html.twig' %}
+<link id="bs-css" href="{{asset('bundles/angelesvida/other/css/bootstrap-cerulean.min.css')}}" rel="stylesheet">
+<link href="{{asset('bundles/angelesvida/other/css/charisma-app.css')}}" rel="stylesheet">
+
+<!-- top-nav -->
+<nav class="top-nav">
+    <div class="shell">
+        <ul class="clearfix">
+            <li><a href="{{ url('iInicio') }}">Inicio</a></li>
+            <li><a href="{{ url('iArticulos') }}">Articulos</a></li>
+            <li class="active"><a href="{{ url('iHorarios') }}">Horarios y Roles</a></li>
+            <li><a href="{{ url('login') }}">Salir</a></li>
+        </ul>
+    </div>
+</nav>
+<!-- end of top-nav -->
+  <center>
+    <div class="row">
+         <br><br/>
+      <h3><li class="glyphicon glyphicon-edit"></li><font color="#1C1C1C"> Lista de Horarios<font/></h3>
+
+        
+        <div class="box col-md-12">
+        
+            <div class="box-inner">
+                <div class="box-content">
+    {% if message is defined%}
+            <div class="box-content alerts">
+                <div class="alert alert-danger">
+
+                    <strong>¡{{message}}!</strong>
+                </div>
+            </div>
+        {% endif %}
+                    <table class="table table-hover record_properties bootstrap-datatable datatable responsive table-bordered">
+
+                        <tbody>
+                            {% if message is not defined%}
+                                <tr class="bg-primary">
+
+                                    <th class="center-text">Nombre</th>
+                                    <th class="center-text">Descripción</th>     
+                                    <th class="center-text">Acción</th>
+                                </tr>
+
+                            {% endif %}
+                            {% for horario in horarios %}
+                                <tr class="center-text">
+                                    <td>{{horario.nombre}}</td>
+                                    <td>{{horario.descripcion}}</td>
+
+                                    <td>
+
+                                       <a class="btn btn-warning btn-xs" href="{{path('rDescargarHorario')}}?id={{horario.id}}">
+                                            <i class="glyphicon glyphicon-download-alt"></i>
+                                            Ver
+                                        </a>
+
+                                    </td>
+                                </tr>
+                            {% endfor %}
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</center>
+
+{% include 'ModuloInternosBundle:Default:baseInternosFooter.html.twig' %} 

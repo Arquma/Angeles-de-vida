@@ -1,0 +1,39 @@
+{% extends '::baseCrudIndex.html.twig' %}
+{% block tituloNew %}
+    <h1>Mostrar usuario</h1>
+{% endblock %}
+{% block table %}
+
+    <table class="records_list">
+
+        <tbody>
+
+            <tr>
+                <th>Id</th>
+                <th>Nombre de usuario</th>
+                <th>Contraseña</th>
+                <th>Acciones</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <td>{{ entity.id }}</td>
+                <td>{{ entity.nombreUsuario }}</td>
+                <td>{{ entity.contrasena }}</td>
+                <td><li> <a href="{{ path('usuario_edit', { 'id': entity.id }) }}">
+                Editar
+            </a></li></td>
+    <td><li> <a href="{{ path('usuario_delete', { 'id': entity.id }) }}">
+            Borrar
+        </a></li></td>
+</tr>
+</tbody>
+</table>
+{% endblock %}
+{% block nuevo %}
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('usuario') }}">
+                Volver a usuarios
+            </a>
+    </ul>
+{% endblock %}

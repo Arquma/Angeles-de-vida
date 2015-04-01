@@ -1,0 +1,7 @@
+parameters:
+#    modulo_asociacion.example.class: AngelesVida\ModuloAsociacionBundle\Example
+
+services:
+#    modulo_asociacion.example:
+#        class: %modulo_asociacion.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

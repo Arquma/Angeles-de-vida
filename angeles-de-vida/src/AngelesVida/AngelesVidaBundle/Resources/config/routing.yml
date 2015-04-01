@@ -1,0 +1,37 @@
+angeles_vida_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: AngelesVidaBundle:Default:index }
+inicio:
+    pattern: /inicio
+    defaults: {_controller: AngelesVidaBundle:Default:inicio}
+
+login:
+    path: /login
+    defaults: { _controller: AngelesVidaBundle:Security:login}
+
+login_check:
+    path: /login_check
+
+cerrar_sesion:
+    pattern: /cerrarSesion
+    defaults: { _controller: AngelesVidaBundle:Security:logout}
+
+administrador:
+    path: /administrador
+    defaults: { _controller: AngelesVidaBundle:Administrador:inicio}
+    
+pActividades:
+    path: /pActividades
+    defaults: { _controller: AngelesVidaBundle:Default:pActividades}
+    
+pTemasDeInteres:
+    path: /pTemasDeInteres
+    defaults: { _controller: AngelesVidaBundle:Default:pTemasDeInteres}
+    
+pQuienesSomos:
+    path: /pQuienesSomos
+    defaults: { _controller: AngelesVidaBundle:Default:pQuienesSomos}
+
+galeria:
+    path: /pGaleria
+    defaults: { _controller: AngelesVidaBundle:Default:pGaleria }

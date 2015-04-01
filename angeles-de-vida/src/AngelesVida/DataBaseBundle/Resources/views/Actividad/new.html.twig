@@ -1,0 +1,77 @@
+{% extends "baseCrud.html.twig" %}
+{% block titleCrud %}
+    <li class="nav-header">Actividades</li>
+    {% endblock %}
+    {% block bodyCrud %}
+
+    <script>
+        $(function () {
+            $("#form").validate({
+                rules: {
+                    'nombre': 'required',
+                    'descripcion': 'required',
+                    'lugar': 'required'
+                },
+                messages: {
+                    'nombre': 'Este campo es requerido.'
+                },
+                debug: true,
+                submitHandler: function (form) {
+                    alert('Datos de actividad ingresados correctamente.');
+                }
+            });
+        });
+
+    </script>
+
+    <center>
+        <h2>Crear Actividad</h2>
+
+
+        <div class="row">
+            <div class="box col-md-12">
+                <div class="box-inner">
+                    <div class="box-content">
+                        {% if message is defined%}
+                            <div class="alert alert-info"><font color="088A08">{{message}}</font></div>
+                            {% endif %}
+
+                        {{form_start(form)}}
+                        {{form_errors(form)}}
+
+                        {{ form_label(form.nombre) }}
+                        {{ form_errors(form.nombre) }}
+                        {{ form_widget(form.nombre) }}
+                        <br>
+                        {{ form_label(form.fecha) }}
+                        {{ form_errors(form.fecha) }}
+                        {{ form_widget(form.fecha) }}
+                        <br>
+                        {{ form_label(form.horaInicio) }}
+                        {{ form_errors(form.horaInicio) }}
+                        {{ form_widget(form.horaInicio) }}
+                        <br>
+                        {{ form_label(form.horaFin) }}
+                        {{ form_errors(form.horaFin) }}
+                        {{ form_widget(form.horaFin) }}
+                        <br>
+                        {{ form_label(form.descripcion) }}
+                        {{ form_errors(form.descripcion) }}
+                        {{ form_widget(form.descripcion) }}
+                        <br>
+                        {{ form_label(form.lugar) }}
+                        {{ form_errors(form.lugar) }}
+                        {{ form_widget(form.lugar) }}
+                        <br>
+
+                        {{ form_rest(form) }}
+
+                        {{form_end(form)}}
+
+                        <br>
+                        <a class="btn btn-primary" href="{{ path('actividad') }}">
+                            Volver a usuarios
+                        </a>
+                        </center>
+
+                    {% endblock %}

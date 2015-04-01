@@ -1,0 +1,69 @@
+{% extends "baseCrud.html.twig" %}
+{% block titleCrud %}
+    <li class="nav-header">Tratamientos</li>
+    {% endblock %}
+    {% block bodyCrud %}
+    
+     <script>
+        $(function () {
+            $("#edit_form").validate({
+                rules: {
+                    'nombre': 'required',
+                    'decripcion': 'required'
+                },
+                messages: {
+                    'nombre': 'Este campo es requerido.'
+                },
+                debug: true,
+                submitHandler: function (form) {
+                    alert('Datos de tratamiento ingresados correctamente.');
+                }
+            });
+        });
+
+    </script>
+    
+    <center>
+
+        <h2>Editar/Eliminar Tratamiento</h2>
+
+
+        <div class="row">
+            <div class="box col-md-12">
+                <div class="box-inner">
+                    <div class="box-content">
+                        {% if message is defined%}
+                            <div class="alert alert-info"><font color="088A08">{{message}}</font></div>
+                            {% endif %}
+
+                       {{form_start(edit_form)}}
+                        {{form_errors(edit_form)}}
+
+
+                        {{ form_label(edit_form.nombre) }}
+                        {{ form_errors(edit_form.nombre) }}
+                        {{ form_widget(edit_form.nombre) }}
+                        <br>
+                        <br>
+                        {{ form_label(edit_form.decripcion) }}
+                        {{ form_errors(edit_form.decripcion) }}
+                        {{ form_widget(edit_form.decripcion) }}
+                        <br>
+                        <br>
+                        {{ form_rest(edit_form) }}
+                        <br>
+                                                
+                        {{form_end(edit_form)}}
+                        
+                        {{ form(delete_form) }}
+                        <br>
+
+                        <a class="btn btn-primary" href="{{ path('tratamiento') }}">
+                            Volver a la lista de tratamientos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div><!--/row-->
+    </center>
+{% endblock %}

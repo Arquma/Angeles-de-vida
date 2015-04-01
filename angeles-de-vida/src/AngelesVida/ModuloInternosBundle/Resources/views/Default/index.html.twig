@@ -1,0 +1,54 @@
+{% include 'ModuloInternosBundle:Default:baseInternosHeaderAlto.html.twig' %}
+<link rel="stylesheet" href="{{asset('bundles/angelesvida/cssCeleste/css/style.css')}}" type="text/css" media="all" />  
+
+<link id="bs-css" href="{{asset('bundles/angelesvida/other/css/bootstrap-cerulean.min.css')}}" rel="stylesheet">
+<link href="{{asset('bundles/angelesvida/other/css/charisma-app.css')}}" rel="stylesheet">
+
+<!-- top-nav -->
+		<nav class="top-nav">
+			<div class="shell">
+				<ul class="clearfix">
+					<li class="active"><a href="{{ url('iInicio') }}">Inicio</a></li>
+                                        <li><a href="{{ url('iArticulos') }}">Articulos</a></li>
+                                        <li><a href="{{ url('iHorarios') }}">Horarios y Roles</a></li>
+					<li><a href="{{ url('login') }}">Salir</a></li>
+				</ul>
+			</div>
+		</nav>
+		<!-- end of top-nav -->
+<div class="ch-container">
+    <div class="row">
+
+        <div class="row">
+            <div class="col-md-12 center login-header">
+
+
+                <center> <h2 id="logo2"></h2></center>	
+
+
+
+                <h2><font color="#000000">Asociación Pro Neonatos Dr.R.A Calderón Guardia<font/></h2>
+                 <h5><font color="#6E6E6E">Somos un grupo de personas con sensibilidad social, reunidas para gestionar recursos,
+                  <font/>
+                </h5>
+                <h5><font color="#6E6E6E">paralelamente a aquellos que aporta la Caja Costarricense de Seguro Social,
+                  <font/>
+                </h5>
+                <h5>  <font color="#6E6E6E">con el fin de cumplir la misión del Servicio de Neonatología del Hospital Dr. Rafael Ángel Calderón Guardia.<font/></h5>
+            </div>
+            <!--/span-->
+
+        </div><!--/fluid-row-->
+
+    </div><!--/.fluid-container-->
+
+    <br>
+    
+    
+    
+    
+    
+    <br/>
+</div><!--/.fluid-container-->
+
+{% include 'ModuloInternosBundle:Default:baseInternosFooter.html.twig' %} 

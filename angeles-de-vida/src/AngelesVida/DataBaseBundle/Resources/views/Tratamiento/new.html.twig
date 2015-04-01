@@ -1,0 +1,61 @@
+{% extends "baseCrud.html.twig" %}
+{% block titleCrud %}
+    <li class="nav-header">Tratamientos</li>
+    {% endblock %}
+    {% block bodyCrud %}
+    
+    
+    <script>
+        $(function () {
+            $("#form").validate({
+                rules: {
+                    'nombre': 'required',
+                    'decripcion': 'required'
+                },
+                messages: {
+                    'nombre': 'Este campo es requerido.'
+                },
+                debug: true,
+                submitHandler: function (form) {
+                    alert('Datos de tratamiento ingresados correctamente.');
+                }
+            });
+        });
+
+    </script>
+    
+    <center>
+        <h2>Crear Tratamiento</h2>
+
+
+        <div class="row">
+            <div class="box col-md-12">
+                <div class="box-inner">
+                    <div class="box-content">
+                        {% if message is defined%}
+                            <div class="alert alert-info"><font color="088A08">{{message}}</font></div>
+                            {% endif %}
+
+                        {{form_start(form)}}
+                        {{form_errors(form)}}
+
+
+                        {{ form_label(form.nombre) }}
+                        {{ form_errors(form.nombre) }}
+                        {{ form_widget(form.nombre) }}
+                        <br>
+                        <br>
+                        {{ form_label(form.decripcion) }}
+                        {{ form_errors(form.decripcion) }}
+                        {{ form_widget(form.decripcion) }}
+                        <br>
+                        <br>
+                        {{ form_rest(form) }}
+
+                        {{form_end(form)}}
+                        <br>
+                        <a class="btn btn-primary" href="{{ path('tratamiento') }}">
+                            Volver a usuarios
+                        </a>
+                        </center>
+                    {% endblock %}

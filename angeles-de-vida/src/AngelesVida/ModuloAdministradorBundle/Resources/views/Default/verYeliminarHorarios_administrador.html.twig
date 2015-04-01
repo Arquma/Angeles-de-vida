@@ -1,0 +1,113 @@
+{# empty Twig template #}
+{% include 'ModuloAdministradorBundle:Default:baseAdminHeaderAlto.html.twig' %}
+<link id="bs-css" href="{{asset('bundles/angelesvida/other/css/bootstrap-cerulean.min.css')}}" rel="stylesheet">
+<link href="{{asset('bundles/angelesvida/other/css/charisma-app.css')}}" rel="stylesheet">
+<!-- top-nav -->
+<nav class="top-nav">
+    <div class="shell">
+        <a href="#" class="nav-btn">Inicio<span></span></a>
+        <span class="top-nav-shadow"></span>
+        <ul class="clearfix">
+            <li><a href="{{ url('aInicio') }}">Inicio</a></li>
+            <li><a href="{{ url('aActividades') }}">Actividades</a></li>
+            <li class="active"><a href="{{ url('aDocumentos') }}">Documentos</a></li>
+            <li><a href="{{ url('aCuentas') }}">Cuentas</a></li>
+            <li><a href="{{ url('aEditarInicio') }}">Editar Inicio</a></li>
+            <li><a href="{{ url('cerrar_sesion') }}">Salir</a></li>
+
+        </ul>
+    </div>
+</nav>
+<!-- end of top-nav -->
+ <div class="navbar navbar-default" role="navigation">
+
+    <div class="navbar-inner">
+        <button type="button" class="navbar-toggle pull-left animated flip">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+    </div>
+</div>
+            <div class="col-sm-2 col-lg-2">
+    <div class="sidebar-nav">
+        <div class="nav-canvas">
+            <div class="nav-sm nav nav-stacked">
+
+            </div>
+            <ul class="nav nav-pills nav-stacked main-menu">
+                <li class="nav-header">Acciones</li>
+                <li><a class="ajax-link" href="{{path('aDocumentos')}}"><i class="glyphicon glyphicon-plus"></i><span> Nuevo horario</span></a>
+                </li>
+                <li><a class="ajax-link" href="{{path('aMantHorario')}}"><i class="glyphicon glyphicon-list"></i><span> Ver horarios</span></a>
+                </li>
+                
+                
+            </ul>
+
+        </div>
+    </div>
+</div>
+<center>
+    <br><br/>
+     <br><br/>
+      <br><br/>
+      <h3><li class="glyphicon glyphicon-edit"></li><font color="#1C1C1C"> Lista de Horarios<font/></h3>
+    <div class="row">
+        <div class="box col-md-12">
+           
+            <div class="box-inner">
+                <div class="box-content">
+                     {% if message is defined%}
+                        <div class="box-content alerts">
+                            <div class="alert alert-success">
+                             
+                                <strong>¡{{message}}!</strong>
+                            </div>
+                        </div>
+                    {% endif %}
+                    
+                    <table class="table table-striped table-bordered bootstrap-datatable datatable responsive">
+                        {% if message is not defined%}
+                        <thead>
+                             
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Descripción</th>
+                                <th>Tipo de horario</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                         {% endif %}
+                        <tbody>
+                            {% for horario in horarios %}
+                                <tr>
+                                    <td>{{horario.nombre}}</td>
+                                    <td class="center">{{horario.descripcion}}</td>
+                                    <td class="center">{{horario.tipoHorario}}</td>
+                                    <td class="center">
+                                        <a class="btn btn-success" href="{{path('aDescargarHorario')}}?id={{horario.id}}">
+                                            <i class="glyphicon glyphicon-download-alt"></i>
+                                            Ver
+                                        </a>
+
+                                        <a class="btn btn-danger" href="{{path('aBorrarHorario')}}?id={{horario.id}}">
+                                            <i class="glyphicon glyphicon-trash icon-white"></i>
+                                            Borrar
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+
+                        </tbody>
+                    </table>
+                            
+                            
+                </div>
+            </div>
+        </div>
+    </div><!--/row-->
+</center>
+{% include 'ModuloAdministradorBundle:Default:baseAdminFooter.html.twig' %} 

@@ -1,0 +1,50 @@
+{% extends "baseCrud.html.twig" %}
+{% block titleCrud %}
+    <li class="nav-header">Usuarios</li>
+    {% endblock %}
+    {% block bodyCrud %}
+    <center>
+
+        <h2>Usuarios</h2>
+
+        <div class="row">
+            <div class="box col-md-12">
+                <div class="box-inner">
+                    <div class="box-content">
+                        {% if message is defined%}
+                            <div class="alert alert-info"><font color="088A08">{{message}}</font></div>
+                            {% endif %}
+
+                        <table class="rwd-table">
+
+                            <tbody>
+
+                                <tr class="bg-primary">
+                                    <th>Id</th>
+                                    <th>Nombre de usuario</th>
+                                    <th>Contraseña</th>
+                                    <th>Acciones</th>
+                                </tr>
+
+                                {% for entity in entities %}
+
+                                    <tr class="center-text">
+                                        <td data-th="Id">{{ entity.id }}</td>
+                                        <td data-th="Nombre de Usuario">{{ entity.nombreUsuario }}</td>
+                                        <td data-th="Contraseña">{{ entity.contrasena }}</td>
+                                        <td data-th="Acciones">
+                                            <ul>
+                                                <a class="btn btn-warning" href="{{ path('usuario_edit', { 'id': entity.id }) }}"> Editar/Eliminar</a>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+
+
+                        <a class="btn btn-primary" href="{{ path('usuario_new') }}">
+                            Crear un nuevo usuario
+                        </a>
+                        </center>
+                    {% endblock %}

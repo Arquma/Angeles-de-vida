@@ -1,0 +1,20 @@
+{# empty Twig template #}
+{% extends '::base2.html.twig' %}
+{% block top_nav %}
+<nav class="top-nav">
+			<div class="shell">
+				<a href="#" class="nav-btn">Administrador<span></span></a>
+				<span class="top-nav-shadow"></span>
+				<ul>
+					<li class="active"><span><a href="#">Inicio</a></span></li>
+					<li><span><a href="#">Actividades</a></span></li>
+					<li><span><a href="">Protocolos</a></span></li>
+                                        <li><span><a href="">Artículos</a></span></li>
+                                        <li><span><a href="">HOla2</a></span></li>
+					<li><span><a href="{{ url('login') }}">Cerrar sesión</a></span></li>
+                                        <li><span><a href="{{ url('login') }}">Salir</a></span></li>
+				</ul>
+			</div>
+		</nav>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+modulo_residentes_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: ModuloInternosBundle:Default:index }
+    
+iInicio:
+    pattern: /iInicio
+    defaults: { _controller: ModuloInternosBundle:Default:iInicio }
+    
+    
+iArticulos:
+    pattern: /iArticulos
+    defaults: { _controller: ModuloInternosBundle:Default:iArticulos }
+    
+iHorarios:
+    pattern: /iHorarios
+    defaults: { _controller: ModuloInternosBundle:Default:iHorarios }

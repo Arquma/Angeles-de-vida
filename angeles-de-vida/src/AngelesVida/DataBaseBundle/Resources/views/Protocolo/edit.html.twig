@@ -1,0 +1,70 @@
+{% extends "baseCrud.html.twig" %}
+{% block titleCrud %}
+    <li class="nav-header">Protocolos</li>
+    {% endblock %}
+    {% block bodyCrud %}
+    
+      <script>
+        $(function () {
+            $("#edit_form").validate({
+                rules: {
+                    'nombre': 'required',
+                    'descripcion': 'required'
+                },
+                messages: {
+                    'nombre': 'Este campo es requerido.'
+                },
+                debug: true,
+                submitHandler: function (form) {
+                    alert('Datos de protocolo ingresados correctamente.');
+                }
+            });
+        });
+
+    </script>
+    
+    <center>
+
+        <h2>Editar/Eliminar Protocolo</h2>
+
+
+        <div class="row">
+            <div class="box col-md-12">
+                <div class="box-inner">
+                    <div class="box-content">
+                        {% if message is defined%}
+                            <div class="alert alert-info"><font color="088A08">{{message}}</font></div>
+                            {% endif %}
+
+                        {{form_start(edit_form)}}
+                        {{form_errors(edit_form)}}
+
+
+                        {{ form_label(edit_form.nombre) }}
+                        {{ form_errors(edit_form.nombre) }}
+                        {{ form_widget(edit_form.nombre) }}
+                        <br>
+                        <br>
+                        {{ form_label(edit_form.descripcion) }}
+                        {{ form_errors(edit_form.descripcion) }}
+                        {{ form_widget(edit_form.descripcion) }}
+                        <br>
+                        <br>
+                        {{ form_rest(edit_form) }}
+                        <br>
+                        {{form_end(edit_form)}}
+                        
+                        {{ form(delete_form) }}
+                        <br>
+
+                        <a class="btn btn-primary" href="{{ path('usuario') }}">
+                            Volver a la lista de protocolos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div><!--/row-->
+    </center>
+{% endblock %}
+
+
