@@ -18,15 +18,15 @@
 <nav class="top-nav">
     <div class="shell">
         <a href="#" class="nav-btn">Inicio<span></span></a>
-        <span class="top-nav-shadow"></span>
-        <ul>
-            <li><span><a href="{{ url('aInicio') }}">Inicio</a></span></li>
-            <li><span><a href="{{ url('aActividades') }}">Actividades</a></span></li>
-            <li class="active"><span><a href="{{ url('aDocumentos') }}">Documentos</a></span></li>
-            <li><span><a href="{{ url('aCuentas') }}">Cuentas</a></span></li>
-            <li><span><a href="{{ url('aEditarInicio') }}">Editar Inicio</a></span></li>
-
-        </ul>
+       
+        <ul class="clearfix">
+					<li class="active"><a href="{{ url('aInicio') }}">Inicio</a></li>
+					<li><a href="{{ url('aActividades') }}">Actividades</a></li>
+					<li><a href="{{ url('aDocumentos') }}">Documentos</a></li>
+                                        <li><a href="{{ url('aCuentas') }}">Cuentas</a></li>
+                                        <li><a href="{{ url('aEditarInicio') }}">Editar Inicio</a></li>
+					<li><a href="{{ url('cerrar_sesion') }}">Salir</a></li>
+				</ul>
     </div>
 </nav>
 
