@@ -167,7 +167,7 @@ class UsuarioController extends Controller {
             'method' => 'PUT',
         ));
 
-        $form->add('nombreUsuario', 'text', array('label' => 'Nombre de usuario:', 'attr' => array('class' => 'form-control')));
+        $form->add('nombreUsuario', 'text', array('read_only'=>true,'label' => 'Nombre de usuario:', 'attr' => array('class' => 'form-control')));
         $form->add('contrasena', 'text', array('label' => 'Contraseña:', 'attr' => array('class' => 'form-control')));
         $form->add('submit', 'submit', array('label' => 'Actualizar', 'attr' => array('class' => 'btn btn-success')));
 
