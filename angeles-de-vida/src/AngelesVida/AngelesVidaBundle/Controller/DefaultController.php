@@ -46,5 +46,12 @@ class DefaultController extends Controller {
 
         return $this->render('AngelesVidaBundle:Default:galeria.html.twig', array('imagenes' => $imagenes));
     }
+    
+    public function pProtocolosAction()
+   {
+        $em=$this->getDoctrine()->getEntityManager();
+        $protocolos=$em->getRepository('DBBundle:Protocolo')->findAll();
+        return $this->render('AngelesVidaBundle:Default:protocolo.html.twig', array('protocolos' => $protocolos));
+   }
 
 }

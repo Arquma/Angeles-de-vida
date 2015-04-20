@@ -1,1 +1,17 @@
-{ parameters: { database_driver: pdo_mysql, database_host: localhost, database_port: '3306', database_name: asociacion_angeles_de_vida, database_user: root, database_password: root, mailer_transport: smtp, mailer_host: 127.0.0.1, mailer_user: null, mailer_password: null, locale: en, secret: 2bee6cb38a7c63a37e5950eff41e9d1256b0ddf1, debug_toolbar: true, debug_redirects: false, use_assetic_controller: true, database_path: null } }
+# This file is auto-generated during the composer install
+parameters:
+    database_driver: pdo_mysql
+    database_host: localhost
+    database_port: null
+    database_name: asociacion_angeles_de_vida
+    database_user: root
+    database_password: steven
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    locale: en
+    secret: ThisTokenIsNotSoSecretChangeIt
+    debug_toolbar: true
+    debug_redirects: false
+    use_assetic_controller: true

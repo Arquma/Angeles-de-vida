@@ -35,3 +35,7 @@ pQuienesSomos:
 galeria:
     path: /pGaleria
     defaults: { _controller: AngelesVidaBundle:Default:pGaleria }
+ 
+protocolos:
+    path: /pProtocolos
+    defaults: { _controller: AngelesVidaBundle:Default:pProtocolos }

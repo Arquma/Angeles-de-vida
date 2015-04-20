@@ -5,6 +5,12 @@
         <group>
             <file>file:/C:/xampp/htdocs/trunk/angeles-de-vida/app/Resources/views/baseCrud.html.twig</file>
             <file>file:/C:/xampp/htdocs/trunk/angeles-de-vida/src/AngelesVida/ModuloAdministradorBundle/Resources/views/Default/editarPaginaInicio_administrador.html.twig</file>
+            <file>file:/C:/xampp/htdocs/trunk/angeles-de-vida/app/config/parameters.yml</file>
+            <file>file:/C:/xampp/htdocs/trunk/angeles-de-vida/app/Resources/views/base2.html.twig</file>
+            <file>file:/C:/xampp/htdocs/trunk/angeles-de-vida/src/AngelesVida/ModuloAdministradorBundle/Resources/views/Default/mantenimientoGaleria.html.twig</file>
+            <file>file:/C:/xampp/htdocs/trunk/angeles-de-vida/src/AngelesVida/ModuloAdministradorBundle/Resources/config/routing.yml</file>
+            <file>file:/C:/xampp/htdocs/trunk/angeles-de-vida/src/AngelesVida/AngelesVidaBundle/Controller/SecurityController.php</file>
+            <file>file:/C:/xampp/htdocs/trunk/angeles-de-vida/src/AngelesVida/DataBaseBundle/Entity/Actividad.php</file>
         </group>
     </open-files>
 </project-private>

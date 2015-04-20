@@ -855,6 +855,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'AngelesVida\\AngelesVidaBundle\\Controller\\DefaultController::pGaleriaAction',  '_route' => 'galeria',);
             }
 
+            // protocolos
+            if ($pathinfo === '/pProtocolos') {
+                return array (  '_controller' => 'AngelesVida\\AngelesVidaBundle\\Controller\\DefaultController::pProtocolosAction',  '_route' => 'protocolos',);
+            }
+
         }
 
         // _welcome
